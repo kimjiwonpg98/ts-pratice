@@ -3,12 +3,18 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "tsc && nodemon ./dist/index.js",
+    "test": "NODE_ENV=test jest --detectOpenHandles --watchAll"
+  },
   "dependencies": {
+    "@types/dotenv": "^8.2.0",
     "cors": "^2.8.5",
     "express": "^4.17.3",
     "mysql2": "^2.3.3",
     "reflect-metadata": "^0.1.13",
     "ts-node": "^10.7.0",
+    "tsc-watch": "^4.6.2",
     "typeorm": "^0.2.45",
     "typescript": "^4.6.2"
   },

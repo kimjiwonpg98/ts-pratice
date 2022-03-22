@@ -3,11 +3,15 @@ import cors from "cors";
 // import userRouter from "./routes/user";
 import { createConnection } from "typeorm";
 import connectionOptions from "./config/ormconfig";
+import * as dotenv from "dotenv";
 
 const app = express();
 
+dotenv.config();
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
 
 app.use(
   cors({
@@ -16,8 +20,6 @@ app.use(
     credentials: true,
   })
 );
-
-// app.use("/user", userRouter);
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Hello!");

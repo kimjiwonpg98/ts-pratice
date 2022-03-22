@@ -1,4 +1,7 @@
 import { ConnectionOptions } from "typeorm"; 
+import * as dotenv from "dotenv";
+
+dotenv.config();
 
 const ormconfig: ConnectionOptions = {
   type: "mysql",
@@ -18,5 +21,7 @@ const ormconfig: ConnectionOptions = {
   //   subscribersDir: "src/subscriber",
   // },
 };
+
+console.log(process.env.DB_DATABASENAME);
 
 export default ormconfig; 
