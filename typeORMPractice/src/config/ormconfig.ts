@@ -12,16 +12,14 @@ const ormconfig: ConnectionOptions = {
   database: process.env.DB_DATABASENAME,
   synchronize: true,
   logging: false,
-  // entities: ["dist/entity/**/*.js"],
-  // migrations: ["src/migration/**/*.ts"],
-  // subscribers: ["src/subscriber/**/*.ts"],
-  // cli: {
-  //   entitiesDir: "src/entity",
-  //   migrationsDir: "src/migration",
-  //   subscribersDir: "src/subscriber",
-  // },
+  entities: ["entities/*.*"],
+  migrations: ["src/migration/**/*.ts"],
+  subscribers: ["src/subscriber/**/*.ts"],
+  cli: {
+    entitiesDir: "src/entity",
+    migrationsDir: "src/migration",
+    subscribersDir: "src/subscriber",
+  },
 };
-
-console.log(process.env.DB_DATABASENAME);
 
 export default ormconfig; 
